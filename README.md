@@ -1,9 +1,23 @@
-# keycloak-war
+# keycloak-web
 
-Deploy KeyCloak as WAR in your WildFly server. By default creates demo-realm with users and installs admin user.
+Deploy KeyCloak as WAR in your WildFly server. 
+
+## Modules
+
+The project consists of the following modules:
+
+### application
+
+Contains the basic KeyCloak-Application class and defines the dependencies for the WAR
+
+### war
+
+Example WAR configuration: By default creates a demo-realm with users and installs admin user.
 Data is kept in H2 database ${jboss.server.data.dir}/keycloak.db
 
-Just copy the WAR into the deployments/ directory of your WildFly/EAP server and start.
+# Deployment
+
+Just copy the WAR into the deployments/ directory of your WildFly/EAP server and start it.
 Then point your browser to
 
       http://localhost:8080/auth/admin/master/console/
@@ -27,7 +41,7 @@ Password: RcSTU63zAMkpUqhGGuSCmU9wIbXuDSpv+
 
 3. Copy set-export-properties.cli to bin/ directory, edit and run it
 
-   ```sh jboss-cli.sh --file=set-export-properties.cli```
+   ```./jboss-cli.sh --file=set-export-properties.cli```
 
 4. Run KeyCloak/WildFly again
 
@@ -37,7 +51,7 @@ After export is done SHUTDOWN the process via Control-C or kill
 
 2. Unset properties via CLI
 
-   ```sh jboss-cli.sh --file=unset-export-properties.cli```
+   ```./jboss-cli.sh --file=unset-export-properties.cli```
 
 # Run with volatile in-memory database
 
