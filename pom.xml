@@ -16,10 +16,29 @@
         <keycloak.version>12.0.4</keycloak.version>
         <resteasy.version>3.13.2.Final</resteasy.version>
     </properties>
-    
-    
+
     <modules>
         <module>application</module>
         <module>war</module>
     </modules>
+
+    <profiles>
+        <profile>
+            <id>BWB</id>
+
+            <distributionManagement>
+                <repository>
+                    <id>l56itdev.bwb.de-releases</id>
+                    <name>l56itdev.bwb.de-releases</name>
+                    <url>https://l56itdev.bwb.de/artifactory/libs-release-local</url>
+                </repository>
+
+                <snapshotRepository>
+                    <id>l56itdev.bwb.de-snapshots</id>
+                    <name>l56itdev.bwb.de-snapshots</name>
+                    <url>https://l56itdev.bwb.de/artifactory/libs-snapshot-local</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>
