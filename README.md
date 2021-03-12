@@ -39,19 +39,11 @@ Password: RcSTU63zAMkpUqhGGuSCmU9wIbXuDSpv+
       
 2. Configure realm in running KeyCloak and STOP server via Control-C or kill
 
-3. Copy set-export-properties.cli to bin/ directory, edit and run it
+3. Run KeyCloak/WildFly again
 
-   ```./jboss-cli.sh --file=set-export-properties.cli```
-
-4. Run KeyCloak/WildFly again
-
-    ```./standalone.sh -Dkeycloak.connectionsJpa.url='jdbc:h2:${jboss.server.data.dir}/keycloak'```
+   ```sh standalone.sh -Dkeycloak.connectionsJpa.url='jdbc:h2:${jboss.server.data.dir}/keycloak' -Dkeycloak.migration.action="export" -Dkeycloak.migration.provider="singleFile" -Dkeycloak.migration.file="/tmp/master.json" -Dkeycloak.migration.realmName="master" -Dkeycloak.migration.usersExportStrategy="REALM_FILE"```
 
 After export is done SHUTDOWN the process via Control-C or kill
-
-2. Unset properties via CLI
-
-   ```./jboss-cli.sh --file=unset-export-properties.cli```
 
 # Run with volatile in-memory database
 
