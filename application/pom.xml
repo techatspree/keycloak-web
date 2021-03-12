@@ -10,7 +10,6 @@
     
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.akquinet.ccsp.keycloak</groupId>
     <artifactId>keycloak-jar</artifactId>
     <version>12.0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -110,16 +109,6 @@
                 <exclusion>
                     <groupId>org.wildfly.security</groupId>
                     <artifactId>*</artifactId>
-                </exclusion>
-
-                <exclusion>
-                    <groupId>com.fasterxml.jackson.core</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-
-                <exclusion>
-                    <groupId>com.fasterxml.jackson.datatype</groupId>
-                    <artifactId>jackson-datatype-jdk8</artifactId>
                 </exclusion>
 
                 <exclusion>
