@@ -5,14 +5,13 @@
     <parent>
         <artifactId>keycloak-web</artifactId>
         <groupId>de.akquinet.ccsp.keycloak</groupId>
-        <version>12.0.4-SNAPSHOT</version>
+        <version>14.0.0-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.akquinet.ccsp.keycloak</groupId>
     <artifactId>keycloak-war</artifactId>
-    <version>12.0.4-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <dependencies>

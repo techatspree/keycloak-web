@@ -36,7 +36,7 @@ public class KeyCloakWARApplication extends KeycloakApplication
   }
 
   @Override
-  protected ExportImportManager migrateAndBootstrap()
+  protected ExportImportManager bootstrap()
   {
     try
     {
@@ -55,7 +55,7 @@ public class KeyCloakWARApplication extends KeycloakApplication
       throw new RuntimeException("migrateAndBootstrap", exception);
     }
 
-    return super.migrateAndBootstrap();
+    return super.bootstrap();
   }
 
   @Override
