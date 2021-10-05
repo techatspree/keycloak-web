@@ -73,7 +73,7 @@ public class KeyCloakWARApplication extends KeycloakApplication
    * <p>
    * - keycloak-server.json, e.g. may be located in META-INF/
    * - keycloak-add-user.json, MUST be located in ${jboss.server.config.dir}
-   * - Import of realm may be located anywhere, but has to mentioned in System property "keycloak.import"
+   * - Import file of a realm may be located anywhere, but has to be defined in system property "keycloak.import"
    * <p>
    * Thus we have to copy the data from META-INF/ in the WAR to the expected location.
    *
@@ -92,7 +92,7 @@ public class KeyCloakWARApplication extends KeycloakApplication
         final int bytes = IOUtils.copy(source, target);
 
         LOG.info("Copied " + bytes + " bytes to " + file);
-        return file.getAbsolutePath();
+        return file.getCanonicalPath();
       }
     }
 
